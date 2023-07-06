@@ -35,10 +35,14 @@ tr:hover {
 }
 
 .pos {
-    width: 4vw;
+    width: 2vw;
 }
 
-.plaque {
+.dossard {
+    width: 2vw;
+}
+
+.full-name {
     width: 6vw;
 }
 

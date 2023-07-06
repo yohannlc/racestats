@@ -20,7 +20,6 @@ function secondsToTimeString(seconds) {
         s = 0;
     }
     
-
     let timeString = `${padZero(h)}:${padZero(m)}:${padZero(s)}`;
     return timeString;
 }
@@ -73,6 +72,7 @@ function doStats() {
             let averageInSeconds = totalInSeconds / count
             laps[currentNum] = {
                 num: currentNum,
+                fullName: "NOM Prénom",
                 bestLapInSeconds: laps[currentNum].bestLapInSeconds,
                 bestLapInString: laps[currentNum].bestLapInString,
                 lapNumber: laps[currentNum].lapNumber,
@@ -115,19 +115,22 @@ function addTimesToHTMLTable() {
         // créer une nouvelle cellule, avec <td>
         let cell = row.insertCell();
         cell.innerHTML = i+1;
-        // ajouter le numéro du coureur dans la première cellule
+        
         cell = row.insertCell();
         cell.innerHTML = lap[i].num;
-        // ajouter le meileur temps dans la deuxième cellule
+
+        cell = row.insertCell();
+        cell.innerHTML = lap[i].fullName;
+        
         cell = row.insertCell();
         cell.innerHTML = lap[i].bestLapInString;
-        // ajouter le numéro du meilleur tour dans la troisième cellule
+        
         cell = row.insertCell();
         cell.innerHTML = lap[i].lapNumber;
-        // ajouter le temps moyen dans la quatrième cellule
+        
         cell = row.insertCell();
         cell.innerHTML = lap[i].averageLapInString;
-        // ajouter le nombre de tours dans la cinquième cellule
+        
         cell = row.insertCell();
         cell.innerHTML = lap[i].lapCount;
 
@@ -142,7 +145,6 @@ function consoleLogBestLaps () {
         console.log((i + 1) + ". " + bestLap[i].num + " / " + bestLap[i].bestLapInString);
     }
 }
-
 
 function consoleLogAverageLaps () {
     console.log("Classement des temps moyens :");
