@@ -15,6 +15,10 @@ function secondsToTimeString(seconds) {
 
     //arrondir les secondes à l'unité
     s = Math.round(s);
+    if (s === 60) {
+        m += 1;
+        s = 0;
+    }
     
 
     let timeString = `${padZero(h)}:${padZero(m)}:${padZero(s)}`;
