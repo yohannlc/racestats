@@ -112,6 +112,12 @@ function sortByBestLap(a, b) {
     });
 }
 
+function sortByDossard(a, b) {
+    lap.sort(function(a, b) {
+        return a.num - b.num;
+    });
+}
+
 function addTimesToHTMLTable() {
     // récupérer le tableau HTML
     let table = document.getElementById("table");
@@ -171,7 +177,9 @@ function changeSortBy(current_div) {
 
     if (current_div == averageLap) {
         sortByAverageLap();
-    } else {
+    } else if (current_div == num)
+        sortByDossard();
+    else {
         sortByBestLap();
     }
 

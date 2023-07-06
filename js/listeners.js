@@ -14,3 +14,10 @@ bestLap.addEventListener('click', function() {
     changeSortBy(bestLap);
 });
 
+// Sélectionner l'élément avec les classes "best-lap" et "selected"
+const num = document.querySelector('.dossard');
+
+// Ajouter un gestionnaire d'événement onClick
+num.addEventListener('click', function() {
+    changeSortBy(num);
+});

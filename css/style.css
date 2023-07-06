@@ -35,15 +35,15 @@ tr:hover {
 }
 
 .pos {
-    width: 2vw;
+    width: 3vw;
 }
 
 .dossard {
-    width: 2vw;
+    width: 3vw;
 }
 
 .full-name {
-    width: 6vw;
+    width: 10vw;
 }
 
 .best-lap, .average-lap {
@@ -51,11 +51,11 @@ tr:hover {
 }
 
 .best-lap-number, .lap-count {
-    width: 7vw;
+    width: 5vw;
 }
 
 .selected {
-    text-decoration: underline;
+    background-color: #ddd;
 }
 
 .hover {
