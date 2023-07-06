@@ -28,6 +28,17 @@ function padZero(num) {
     return num.toString().padStart(2, '0');
 }
 
+function foundNameByNum (num) {
+    for (let i = 1; i < inscriptions.length; i++) {
+        if (inscriptions[i][0] === num.toString()) {
+            const fullName = inscriptions[i][1] + " " + inscriptions[i][2];
+            return fullName;
+        }
+    }
+return "";
+}
+
+
 function doStats() {
     let i = 0;
     let j = 0;
@@ -69,10 +80,11 @@ function doStats() {
         }
     
         if (count > 0) {
-            let averageInSeconds = totalInSeconds / count
+            let currentFullName = foundNameByNum(currentNum);
+            let averageInSeconds = totalInSeconds / count;
             laps[currentNum] = {
                 num: currentNum,
-                fullName: "NOM Prénom",
+                fullName: currentFullName,
                 bestLapInSeconds: laps[currentNum].bestLapInSeconds,
                 bestLapInString: laps[currentNum].bestLapInString,
                 lapNumber: laps[currentNum].lapNumber,
@@ -84,6 +96,7 @@ function doStats() {
     }
     
     var lap = Object.values(laps);
+    
     return lap;
 }
 
