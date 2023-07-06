@@ -102,6 +102,12 @@ function sortByBestLap(a, b) {
 function addTimesToHTMLTable() {
     // récupérer le tableau HTML
     let table = document.getElementById("table");
+
+    // Réinitialiser toutes les lignes, sauf la première
+    while (table.rows.length > 1) {
+        table.deleteRow(1);
+    }
+
     // pour chaque courreur, on ajoute une ligne au tableau
     for (let i = 0; i < lap.length; i++) {
         // créer une nouvelle ligne, avec <tr>
@@ -143,6 +149,29 @@ function consoleLogAverageLaps () {
     for (let i = 0; i < averageLap.length; i++) {
         console.log((i + 1) + ". " + averageLap[i].num + " / " + averageLap[i].averageLapInString);
     }
+}
+
+function changeSortBy(current_div) {
+    changeLegend(current_div);
+
+    if (current_div == averageLap) {
+        sortByAverageLap();
+    } else {
+        sortByBestLap();
+    }
+
+    addTimesToHTMLTable();
+}
+
+function changeLegend(div) {
+    // Supprimer la classe "selected" de tous les éléments <th>
+    const thElements = document.querySelectorAll('th');
+    thElements.forEach(function(th) {
+        th.classList.remove('selected');
+    });
+
+    // Ajouter la classe "selected" à la div sur laquelle vous avez cliqué
+    div.classList.add('selected');
 }
 
 
