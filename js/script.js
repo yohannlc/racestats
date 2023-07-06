@@ -114,7 +114,7 @@ function addTimesToHTMLTable() {
         let row = table.insertRow();
         // créer une nouvelle cellule, avec <td>
         let cell = row.insertCell();
-        cell.innerHTML = i+1 + ".";
+        cell.innerHTML = i+1;
         // ajouter le numéro du coureur dans la première cellule
         cell = row.insertCell();
         cell.innerHTML = lap[i].num;
