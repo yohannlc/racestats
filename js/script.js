@@ -52,7 +52,7 @@ function doStats() {
         let totalInSeconds = 0;             // temps total, cumule de tous les tours
         let count = 0;                      // nombre de tours
     
-        for (let j = 0; j < times[i].length; j++) {     // pour chaque colonne, donc chaque tour de chaque coureur
+        for (let j = 0; j < times[i].length; j++) {     // pour chaque colonne, donc chaque tour du coureur
             if (reg.test(times[i][j])) {                // si c'est un numéro
                 currentNum = times[i][j];               // on le stocke dans current_num
             } else {                                    // sinon, c'est les éléments suivants, des temps au tour
